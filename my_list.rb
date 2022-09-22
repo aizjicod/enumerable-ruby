@@ -7,6 +7,10 @@ class MyList
   end
 end
 
-list = MyList.new(1, 2, 3, 4)
+list = MyList.new(1, 2, 4,5,7,8,9,11)
 list.all? { |e| e > 5 }
 list.all? { |e| e < 5 }
+puts "any? method"
+list.any? {|e| e == 3}
+list.any? {|e| e == 5}
+list.any? {|e| e == 10}
