@@ -1,7 +1,10 @@
 module Enumerable
-  def all?(&block)
+  def all?
     return 'block not given' unless block_given?
-
-    puts @list.all?(&block)
+    result = true
+    @list.each do |e|
+       result = yield(e) 
+    end
+    puts result
   end
 end
