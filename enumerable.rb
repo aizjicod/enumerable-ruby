@@ -19,4 +19,12 @@ module Enumerable
     puts result
   end
 
+  # returns all elements for which condition is true
+  def filter
+    filtered_array = []
+    @list.each do |element|
+      filtered_array << element if yield element
+    end
+    result
+  end
 end
