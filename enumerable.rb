@@ -11,6 +11,7 @@ module Enumerable
 
   def any?
     return puts 'block not given' unless block_given?
+
     result = false
     @list.each do |e|
       result = yield(e)
