@@ -6,6 +6,13 @@ class MyList
     @list = list
   end
 
+  def each
+    @index = 0
+    while @index < @list.length
+      puts @list[@index]
+      @index += 1
+    end
+  end
 end
 
 list = MyList.new(1, 2, 4,5,7,8,9,11)
