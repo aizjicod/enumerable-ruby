@@ -15,10 +15,22 @@ class MyList
   end
 end
 
-list = MyList.new(1, 2, 4,5,7,8,9,11)
-list.all? { |e| e > 5 }
-list.all? { |e| e < 5 }
-puts "any? method"
-list.any? {|e| e == 3}
-list.any? {|e| e == 5}
-list.any? {|e| e == 10}
+# Create our list
+irb> list = MyList.new(1, 2, 3, 4)
+=> #<MyList: @list=[1, 2, 3, 4]>
+
+# Test #all?
+irb> list.all? {|e| e < 5}
+=> true
+irb> list.all? {|e| e > 5}
+=> false
+
+# Test #any?
+irb> list.any? {|e| e == 2}
+=> true
+irb> list.any? {|e| e == 5}
+=> false
+
+# Test #filter
+irb> list.filter {|e| e.even?}
+=> [2, 4]
